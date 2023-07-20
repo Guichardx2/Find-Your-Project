@@ -1,5 +1,7 @@
 from tkinter import * 
 import customtkinter
+import json
+
 def pg_consulta ():
     consulta= customtkinter.CTk()
     customtkinter.set_appearance_mode("dark")
@@ -8,3 +10,4 @@ def pg_consulta ():
     consulta.geometry("700x400")
     
     consulta.mainloop()
+
