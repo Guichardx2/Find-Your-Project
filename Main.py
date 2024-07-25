@@ -1,7 +1,8 @@
-from tkinter import *
-from cadastro import * 
 import customtkinter
+from tkinter import *
+from cadastro_usuario import * 
 from PIL import Image, ImageTk
+from cadastro_usuario import *
 
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
@@ -39,12 +40,17 @@ user_name = customtkinter.CTkEntry(master=frame_login, placeholder_text="Digite 
 user_name_warning= customtkinter.CTkLabel(master=frame_login, text="*Este campo é obrigatório*", text_color="green", font=("Roboto", 12), fg_color="transparent").place(x=30, y=140)
 
 password_label= customtkinter.CTkLabel(master=frame_login, text="Senha", font=("Roboto", 14)).place(x=30, y=180)
-password = customtkinter.CTkEntry(master=frame_login, placeholder_text="Digite sua seha", width=300, height=35, font=("Roboto", 14), show="*", corner_radius=15).place(x=30, y=210)
+password = customtkinter.CTkEntry(master=frame_login, placeholder_text="Digite sua senha", width=300, height=35, font=("Roboto", 14), show="*", corner_radius=15).place(x=30, y=210)
 password_warning= customtkinter.CTkLabel(master=frame_login, text="*Este campo é obrigatório*", text_color="green", font=("Roboto", 12), fg_color="transparent").place(x=30, y=250)
 
 #botão
-login_button= customtkinter.CTkButton(master=frame_login, text="Entrar", width=300, height=35, font=("Roboto", 14), corner_radius= 20).place(x=30, y=300)
+login_button= customtkinter.CTkButton(master=frame_login, text="Entrar", cursor= "hand2",width=300, height=35, font=("Roboto", 14), corner_radius= 20).place(x=30, y=300)
+
+def click_cadastro():
+    home.destroy()
+    pg_cadastro()
 
 cadastro_label= customtkinter.CTkLabel(master=frame_login, text="Ainda não tem uma conta?", font=("Roboto", 12)).place(x=30, y=370)
-cadastro_button= customtkinter.CTkButton(master=frame_login, text="Cadastre-se", width=100, height=25, font=("Roboto", 12)).place(x=180, y=370)
+cadastro_button= customtkinter.CTkButton(master=frame_login, text="Cadastre-se", cursor= "hand2", width=100, height=25, font=("Roboto", 12), command=click_cadastro ).place(x=180, y=370)
+
 home.mainloop()    
