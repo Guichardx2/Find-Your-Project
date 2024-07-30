@@ -101,15 +101,22 @@ class ApplicationLogin():
             label1= ctk.CTkLabel(master=frame_cadastro, text="Preencha todos os dados com cuidado!", text_color="yellow",font=("Roboto", 14)).place(x=50, y=50)
 
             #widgets e labels cadastro
-            user_name_label= ctk.CTkLabel(master=frame_cadastro, text="Nome Completo", font=("Roboto", 14)).place(x=30, y=80)
-            user_name = ctk.CTkEntry(master=frame_cadastro, placeholder_text="Digite seu nome", width=300, height=35, font=("Roboto", 14), corner_radius=15).place(x=30, y=110)
+            user_name_label= ctk.CTkLabel(master=frame_cadastro, text="Nome Completo", font=("Roboto", 14))
+            user_name_label.place(x=30, y=80)
+            user_name = ctk.CTkEntry(master=frame_cadastro, placeholder_text="Digite seu nome", width=300, height=35, font=("Roboto", 14), corner_radius=15)
+            user_name.place(x=30, y=110)
 
-            user_email_label= ctk.CTkLabel(master=frame_cadastro, text="E-mail", font=("Roboto", 14)).place(x=30, y=150)
-            user_email = ctk.CTkEntry(master=frame_cadastro, placeholder_text="Digite seu e-mail", width=300, height=35, font=("Roboto", 14), corner_radius=15).place(x=30, y=180)
-
-            user_password_label= ctk.CTkLabel(master=frame_cadastro, text="Defina sua senha", font=("Roboto", 14)).place(x=30, y=220)
-            user_password = ctk.CTkEntry(master=frame_cadastro, placeholder_text="Digite sua senha", width=300, height=35, font=("Roboto", 14), show="*", corner_radius=15).place(x=30, y=250)
-            user_confirm_password= ctk.CTkEntry(master=frame_cadastro, placeholder_text="Confirme sua senha", width=300, height=35, font=("Roboto", 14), show="*", corner_radius=15).place(x=30, y=290) 
+            user_email_label= ctk.CTkLabel(master=frame_cadastro, text="E-mail", font=("Roboto", 14))
+            user_email_label.place(x=30, y=150)
+            user_email = ctk.CTkEntry(master=frame_cadastro, placeholder_text="Digite seu e-mail", width=300, height=35, font=("Roboto", 14), corner_radius=15)
+            user_email.place(x=30, y=180)
+            
+            user_password_label= ctk.CTkLabel(master=frame_cadastro, text="Defina sua senha", font=("Roboto", 14))
+            user_password_label.place(x=30, y=220)
+            user_password = ctk.CTkEntry(master=frame_cadastro, placeholder_text="Digite sua senha", width=300, height=35, font=("Roboto", 14), show="*", corner_radius=15)
+            user_password.place(x=30, y=250)
+            user_confirm_password= ctk.CTkEntry(master=frame_cadastro, placeholder_text="Confirme sua senha", width=300, height=35, font=("Roboto", 14), show="*", corner_radius=15)
+            user_confirm_password.place(x=30, y=290) 
 
             def click_cadastro():
                 msg = messagebox.showinfo(title="Mensagem de cadastro", message="Cadastrado com sucesso!")
@@ -119,10 +126,14 @@ class ApplicationLogin():
                 frame_login.pack(side=RIGHT)
 
             #botão cadastrar
-            cadastro_button= ctk.CTkButton(master=frame_cadastro, text="Cadastrar", fg_color="green", hover_color="#014b05",cursor= "hand2",width=130, height=30, font=("Roboto", 14), corner_radius= 20, command= click_cadastro).place(x=200, y=338)
-            button_voltar= ctk.CTkButton(master=frame_cadastro, text="Voltar",fg_color="#151515", hover_color="#262626", cursor= "hand2",width=130, height=30, font=("Roboto", 14), corner_radius= 20, command= click_voltar).place(x=30, y=338)
+            cadastro_button= ctk.CTkButton(master=frame_cadastro, text="Cadastrar", fg_color="green", hover_color="#014b05",cursor= "hand2",width=130, height=30, font=("Roboto", 14), corner_radius= 20, command= click_cadastro)
+            cadastro_button.place(x=200, y=338)
+            button_voltar= ctk.CTkButton(master=frame_cadastro, text="Voltar",fg_color="#151515", hover_color="#262626", cursor= "hand2",width=130, height=30, font=("Roboto", 14), corner_radius= 20, command= click_voltar)
+            button_voltar.place(x=30, y=338)
 
-        cadastro_label= ctk.CTkLabel(master=frame_login, text="Ainda não tem uma conta?", font=("Roboto", 14)).place(x=30, y=363)
-        cadastro_button= ctk.CTkButton(master=frame_login, text="Cadastre-se", fg_color="green", hover_color="#014B05" ,cursor= "hand2", width=130, height=25, font=("Roboto", 12), command=pg_cadastro ).place(x=200, y=363)
+        cadastro_label= ctk.CTkLabel(master=frame_login, text="Ainda não tem uma conta?", font=("Roboto", 14))
+        cadastro_label.place(x=30, y=363)
+        cadastro_button= ctk.CTkButton(master=frame_login, text="Cadastre-se", fg_color="green", hover_color="#014B05" ,cursor= "hand2", width=130, height=25, font=("Roboto", 12), command=pg_cadastro )
+        cadastro_button.place(x=200, y=363)
 
 ApplicationLogin()

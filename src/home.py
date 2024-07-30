@@ -40,9 +40,11 @@ class ApplicationHome():
         #label principal
         search_bar_entry= ctk.CTkEntry(master=self.home, placeholder_text="Faça sua pesquisa...", width=800, height=35, font=("Roboto", 14), corner_radius=15)
         search_bar_entry.place(x=(screen_width/2) - 400, y=90)
-        search_button= ctk.CTkButton(master=self.home, text="Pesquisar", cursor= "hand2",width=100, height=35, font=("Roboto", 14), corner_radius= 20).place(x=(screen_width - 270), y=90)
+        search_button= ctk.CTkButton(master=self.home, text="Pesquisar", cursor= "hand2",width=100, height=35, font=("Roboto", 14), corner_radius= 20)
+        search_button.place(x=(screen_width - 270), y=90)
 
-        filter_combo= ctk.CTkComboBox(master=self.home, width=120, height=35, values=["option 1", "option 2"], corner_radius=20, hover= True , dropdown_hover_color="green", button_hover_color="green").place(x=(screen_width - 160), y=90)
+        filter_combo= ctk.CTkComboBox(master=self.home, width=120, height=35, values=["Filtro", "option 2"], corner_radius=20, hover= True , dropdown_hover_color="green", button_hover_color="green")
+        filter_combo.place(x=(screen_width - 160), y=90)
 
     #adicionar processo button
         def click_add_process():
@@ -65,7 +67,8 @@ class ApplicationHome():
             #     pass
             button_cover= ctk.CTkButton(master=frame_content, text="Visualizar", cursor= "hand2", width=(screen_width - 40), height=100, font=("Roboto", 14), fg_color="#46295A")
             button_cover.pack(side= BOTTOM)
-            label_content = ctk.CTkLabel(master=button_cover, text=f"Processo {i+2}", font=("Roboto", 14)).place(x=10, y=10)
+            label_content = ctk.CTkLabel(master=button_cover, text=f"Processo {i+2}", font=("Roboto", 14))
+            label_content.place(x=10, y=10)
 
 if __name__ == "__main__":
     app_home = ApplicationHome()
